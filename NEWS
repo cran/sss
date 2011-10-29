@@ -1,0 +1,32 @@
+sss 0.0-08 (30/10/2011)
+----------
+
+* First experimental release to CRAN
+
+Improvements:
+
+* Performance gains as a result of using plyr::quickdf rather than as.data.frame
+* Imports plyr and XML rather than declaring dependency
+
+sss 0.0-07 (30/10/2011)
+----------
+
+Improvements:
+
+* Substantial gains in speed by rewriting `fast.read.fwf` and `changeValues` to use `lapply` rather than loops.
+* Documentation updates 
+
+sss 0.0-05
+----------
+
+Fixed issues:
+
+* Fixed issues with converting logical values to TRUE/FALSE
+* Convert values where appropriate
+* Add variable.label attribute containing question text
+
+sss 0.0-04
+----------
+
+* Refactored all function names to use camelCase
+* Implemented read.fast.fwf to read fixed width file 
