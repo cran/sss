@@ -1,15 +1,15 @@
-d8909ec501f71e701dbb2ae34e52f1da *DESCRIPTION
-6077957525cf47d408c3ad375ca89601 *NAMESPACE
-b61a0230fe41438780be17fda327cb0b *NEWS
+a8a90cfa65dc0a27f1114700f3c0648a *DESCRIPTION
+3d0f9602de9a02920216cdc7cf13f343 *NAMESPACE
+d657da100b395535cd372cef6a77f939 *NEWS
 3687888852d983f1e864cae177cd40a5 *R/internal-csv.R
 1e04c807488e5f1c4f1b843be712e632 *R/internal-xml.R
 e26567eb5993a55faead578f9983a22b *R/read-fwf.R
 dba2f04c6769a22323542b5f896e477e *R/read-sss.R
-a3b327026e98ec244be61b90dd64f47c *R/sss-package.R
-059b53eb505b23e7cc65d235538ffe7b *README.md
-b99f6da95cd3088a38d7cb05e683f3e4 *TODO
+de6b1ac46f1beabb187364abf47d178a *R/sss-package.R
+dc15a88f9df05e7346deadc8b281bcc0 *build/vignette.rds
+6225f1903fa35b1a8ec9872822b02690 *inst/doc/sss.R
 dc5c1f2182f0ac1163b2818c0b4a8b7b *inst/doc/sss.Rnw
-a192632799a315f5a61aee5390b39b08 *inst/doc/sss.pdf
+89412aa991bbd2004a148cf52c90eb86 *inst/doc/sss.pdf
 261451eec015bc5d0bfd68cca66105ca *inst/tests/sample.asc
 be0fe321900b2baa924a3674290d9946 *inst/tests/sample.sss
 4e7c07dafb8446c2775e103b4295ed62 *inst/tests/test-external.R
@@ -33,4 +33,3 @@ ab9322b4c64579d5726ea0b6ed1cbde3 *man/parseSSSmetadata.Rd
 261451eec015bc5d0bfd68cca66105ca *vignettes/sample.asc
 be0fe321900b2baa924a3674290d9946 *vignettes/sample.sss
 dc5c1f2182f0ac1163b2818c0b4a8b7b *vignettes/sss.Rnw
-51ed853c54a56b9cc190e825da84461c *vignettes/sss.tex
