@@ -4,20 +4,25 @@
 \alias{readSSSmetadata}
 \title{Reads a triple-s XML (sss) metadata file, as specified by the triple-s XML standard.}
 \usage{
-readSSSmetadata(SSSfilename)
+readSSSmetadata(x, SSSfilename)
 }
 \arguments{
-\item{SSSfilename}{Name of .sss file containing the survey metadata}
+\item{x}{Name of .sss file containing the survey metadata}
+
+\item{SSSfilename}{No longer used. Use \code{x} instead.}
 }
 \description{
 This function reads a .sss XML metadata file.  The .sss standard defines a standard survey structure
 }
 \examples{
-# Not executed
-# readSSSmetadata("sample.sss")
+sampleRoot <- system.file("sampledata", package = "sss")
+filenameSSS <- file.path(sampleRoot, "sample-1.sss")
+filenameASC <- file.path(sampleRoot, "sample-1.asc")
+
+readSSSdata(filenameSSS)
+readSSSmetadata(filenameSSS)
 }
 \seealso{
-\code{\link{parseSSSmetadata}}, \code{\link{read.sss}}, \code{\link{readSSSdata}}
+\code{\link[=parseSSSmetadata]{parseSSSmetadata()}}, \code{\link[=read.sss]{read.sss()}}, \code{\link[=readSSSdata]{readSSSdata()}}
 }
 \keyword{read}
-

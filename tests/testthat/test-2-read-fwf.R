@@ -3,15 +3,9 @@
 # Author: Andrie
 #----------------------------------------------------------------------------------
 
-if(interactive()){
-  library(testthat)
-  sampleRoot <- "sss/tests/testthat/samples/sample-0"
-} else {
-  sampleRoot <- "samples/sample-0"
-}
+if(interactive()) library(testthat)
 
 context("Read fwf")
-
 
 test_that("widths work", {
       ff <- tempfile()
@@ -52,6 +46,3 @@ test_that("colclasses work",{
       unlink(ff)
       expect_equal(test, rest)
     })
-
-
-

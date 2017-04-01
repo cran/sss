@@ -5,19 +5,14 @@
 #' @references http://www.triple-s.org/
 #'
 #' The most important exported function is:
-#' \code{\link{read.sss}}
+#' * [read.sss()]
 #'
 #' @docType package
 #' @name sss-package
-#' @import XML
-#' @import  methods 
+#' @importFrom assertthat assert_that
+#' @import  methods
 #' @importFrom utils read.csv type.convert
 #' @aliases sss sss-package
 #' @keywords package
+#' @author Andrie de Vries
 NULL
-
-.onAttach <- function(libname, pkgname){
-  msg <- "The sss package is in early stages of development and still considered experimental."
-  packageStartupMessage(msg)
-}  
-

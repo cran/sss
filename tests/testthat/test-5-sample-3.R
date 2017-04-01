@@ -4,21 +4,17 @@
 #------------------------------------------------------------------------------
 
 
-if(interactive()){
-  library(testthat)
-  sampleRoot <- "sss/tests/testthat/samples/sample-2"
-} else {
-  sampleRoot <- "samples/sample-2"
-}
-filenameSSS <- file.path(sampleRoot, "survey_567311_20160213-200520_triples.sss")
-filenameASC <- file.path(sampleRoot, "survey_567311_20160213-200520_triples.dat")
+if(interactive()) library(testthat)
+sampleRoot <- system.file("sampledata", package = "sss")
+filenameSSS <- file.path(sampleRoot, "sample-3.sss")
+filenameASC <- file.path(sampleRoot, "sample-3.dat")
 file.exists(filenameSSS)
 file.exists(filenameASC)
 
 
 #------------------------------------------------------------------------------
 
-context("sample 2")
+context("sample 3")
 
 test_that("parsing of .sss and .asc works", {
   test <- read.sss(filenameSSS, filenameASC)
@@ -26,4 +22,3 @@ test_that("parsing of .sss and .asc works", {
   expect_equal(nrow(test), 694)
   expect_equal(ncol(test), 200)
 })
-
