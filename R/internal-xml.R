@@ -11,14 +11,20 @@ xml_child_attr <- function(node, name, attr){
   xml_attr(xml_child(node, name), attr)
 }
 
+#' @importFrom xml2 xml_text
+extract_contents <- function(x, ns) {
+  xml_text(xml_child(x, ns))
+}
 
-#' Reads all "variables" inside the triple-s "record". 
-#'
-#' This function parses the record node, extracts all variables
-#' and creates a data frame with information about size, position, type, etc.
-#'
-#' @param xmlNode XML node
-#' @keywords internal
+
+
+# Reads all "variables" inside the triple-s "record". 
+#
+# This function parses the record node, extracts all variables
+# and creates a data frame with information about size, position, type, etc.
+#
+# @param node XML node
+# @keywords Internal
 getSSSrecord <- function(node){
   p <- as.character(xml_child_attrs(node, "position"))
   if (inherits(xml_child(node, "spread"), "xml_missing")){
@@ -38,11 +44,12 @@ getSSSrecord <- function(node){
   } else {
     pto <- p[[1]]
   }
+  
   fastdf(list(
       ident      = as.character(xml_attr(node, "ident")),
       type       = as.character(xml_attr(node, "type")),
-      name       = as.character(xml_contents(xml_child(node, "name")))[1],
-      label      = as.character(xml_contents(xml_child(node, "label")))[1],
+      name       = extract_contents(node, "name"),
+      label      = extract_contents(node, "label"),
       positionStart  = as.character(pfrom),
       positionFinish = as.character(pto),
       subfields = subfields,
@@ -52,12 +59,12 @@ getSSSrecord <- function(node){
 }
 
 
-# Reads all "codes" inside the triple-s "record". 
-#
-# This function parses the record node and extracts all "codes" nodes into a data.frame
-#
-# @param x XML node
-# @keywords internal
+#' Reads all "codes" inside the triple-s "record". 
+#'
+#' This function parses the record node and extracts all "codes" nodes into a data.frame
+#'
+#' @param x XML node
+#' @keywords internal
 getSSScodes <- function(x){
   if (inherits(xml_child(x, "values"), "xml_missing")){
     df <- data.frame(
@@ -69,12 +76,16 @@ getSSScodes <- function(x){
   } else {
     xx <- xml2::xml_find_all(x, "values/value")
     size <- length(xx)
-    df <- data.frame(
+    df <- fastdf(list(
         ident      = rep(unname(xml_attr(x, "ident")), size),
         code       = as.character(xml_attrs(xx)),
-        codevalues = as.character(xml_contents(xx)),
-        stringsAsFactors = FALSE
-    )
+        codevalues = 
+          if (length(xml_contents(xx)) > length(xx)) {
+            xml_text(xml_child(xx, "text"))
+          } else {
+            xml_text(xml_contents(xx))
+          }
+    ))
     df <- df[df$codevalues != "character(0)", ]
   }
   
@@ -119,22 +130,22 @@ splitMultiple <- function(df, n, sep="_"){
   ret
 }
 
-# Repeats each element n times 
-#
-# Each element is repeated n times.  This is used to construct a vector of the new length after accounting for fields of type multiple 
-#
-# @param n Numeric vector that indicates the number of times each row must be repeated
-# @keywords internal
+#' Repeats each element n times 
+#'
+#' Each element is repeated n times.  This is used to construct a vector of the new length after accounting for fields of type multiple 
+#'
+#' @param n Numeric vector that indicates the number of times each row must be repeated
+#' @keywords internal
 repN <- function(n){
   rep(seq_along(n), times=pmax(1, n))
 }
 
-# Reads all "codes" inside the triple-s "record" 
-#
-# This function parses the record node and extracts all "codes" nodes into a data.frame
-#
-# @param x XML node
-# @keywords internal
+#' Reads all "codes" inside the triple-s "record" 
+#'
+#' This function parses the record node and extracts all "codes" nodes into a data.frame
+#'
+#' @param x XML node
+#' @keywords internal
 namesMultiple <- function(names, length, sep = "_"){
   xl <- rep(names, times = pmax(1, length))
   sm <- rep(length <= 1, times = pmax(1, length))

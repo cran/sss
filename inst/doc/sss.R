@@ -1,26 +1,26 @@
-### R code from vignette source 'sss.Rnw'
+## ---- include = FALSE---------------------------------------------------------
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
 
-###################################################
-### code chunk number 1: Setup
-###################################################
+## ----setup--------------------------------------------------------------------
 library(sss)
-filenameSSS <- "sample.sss"
-filenameASC <- "sample.asc"
+library(dplyr, quietly = TRUE, warn.conflicts = FALSE)
 
+## -----------------------------------------------------------------------------
+dat <- read.sss("sample.sss", "sample.asc")
 
-###################################################
-### code chunk number 2: Read
-###################################################
-sssXML <- readSSSmetadata(filenameSSS)
-sss <- parseSSSmetadata(sssXML)
-asc <- readSSSdata(filenameASC)
+## -----------------------------------------------------------------------------
+dat %>% 
+  as_tibble()
 
+## -----------------------------------------------------------------------------
+str(dat)
 
-###################################################
-### code chunk number 3: Display
-###################################################
-df <- read.sss(filenameSSS, filenameASC)
-print(str(df))
-print(df$Q1)
+## -----------------------------------------------------------------------------
+attr(dat, "variable.labels")
 
+## -----------------------------------------------------------------------------
+attr(dat, "label.table")$`2`
 

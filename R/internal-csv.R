@@ -4,11 +4,11 @@
 #------------------------------------------------------------------------------
 
 
-# Applies coded values to asc data, as described in sss metadata.  
-#
-# @param sss Parsed .sss metadata information
-# @param df Parsed .asc data
-# @keywords internal
+#' Applies coded values to asc data, as described in sss metadata.  
+#'
+#' @param sss Parsed .sss metadata information
+#' @param df Parsed .asc data
+#' @keywords internal
 changeValues <- function (sss, df){
   col.names <- names(df)
   whichHasValues <- which(with(sss$variables, 
@@ -33,28 +33,13 @@ changeValues <- function (sss, df){
   df
 }
 
-# Assigns question text to variable.labels attribute.
-# 
-# @inheritParams changeValues
-# @keywords internal
+#' Assigns question text to variable.labels attribute.
+#' 
+#' @inheritParams changeValues
+#' @keywords internal
 addQtext <- function(sss, df){
   attr(df, "variable.labels") <- sss$variables$label
   df
 }
 
 
-# Take input sss filename and replace the .sss with .asc
-guessAsc <- function(x, ext = ".asc"){
-  file.path(
-    dirname(x),
-    paste0(gsub("\\..*$", "", basename(x)), ext)
-  )
-}
-
-
-# Guess if format is csv or asc
-getSSSformat <- function(x){
-  y <- xml_child(readSSSmetadata(x), "survey/record")
-  z <- xml_attr(y, "format")
-  if(!is.na(z) && z == "csv") ".csv" else ".asc"
-}

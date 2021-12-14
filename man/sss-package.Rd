@@ -2,21 +2,32 @@
 % Please edit documentation in R/sss-package.R
 \docType{package}
 \name{sss-package}
-\alias{sss-package}
 \alias{sss}
-\title{Tools for importing files in the triple-s (Standard Survey Structure) format.}
+\alias{sss-package}
+\title{sss: Import Files in the Triple-s (Standard Survey Structure) Format}
 \description{
-sss is a set of tools to import survey files in the .sss (triple-s) format.  Triple-s is a standard to transfer survey data between applications.
+\if{html}{\figure{logo.png}{options: align='right' alt='logo' width='120'}}
+
+Tools to import survey files in the '.sss' (triple-s) format. The package provides the function 'read.sss()' that reads the '.asc' (or '.csv') and '.sss' files of a triple-s survey data file. See also <https://www.triple-s.org/>.
 }
 \references{
-http://www.triple-s.org/
+https://www.triple-s.org/
 
 The most important exported function is:
 \itemize{
 \item \code{\link[=read.sss]{read.sss()}}
 }
 }
-\author{
-Andrie de Vries
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://andrie.github.io/sss/}
+  \item Report bugs at \url{https://github.com/andrie/sss/issues}
 }
-\keyword{package}
+
+}
+\author{
+\strong{Maintainer}: Andrie de Vries \email{apdevries@gmail.com}
+
+}
+\keyword{internal}
