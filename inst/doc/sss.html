@@ -38,6 +38,7 @@ document.addEventListener('DOMContentLoaded', function(e) {
     </style>
 
 
+
 <style type="text/css">
   code {
     white-space: pre;
@@ -333,7 +334,9 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 
 
 
-<p>The <code>sss</code> package makes it easy to read and parse survey data in the sss (<a href="https://www.triple-s.org/">triple-s</a>) file format.</p>
+<p>The <code>sss</code> package makes it easy to read and parse survey
+data in the sss (<a href="https://www.triple-s.org/">triple-s</a>) file
+format.</p>
 <div id="example" class="section level1">
 <h1>Example</h1>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sss)</span>
@@ -343,14 +346,17 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 <p>Display the results.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>dat <span class="sc">%&gt;%</span> </span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_tibble</span>()</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 3 x 17</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 3 × 17</span></span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   Q1      Q2_1  Q2_2  Q2_3  Q2_4  Q2_5  Q2_6  Q2_7  Q2_8  Q2_9 Q3    Q4_1  Q4_2 </span></span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   &lt;chr&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 Visit~     1     0     1     0     0     0     0     0     1 &quot;Amu~ Sher~ &quot;Oth~</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2 Visit~     0     1     0     0     0     0     0     0     0 &quot;   ~ Nott~  &lt;NA&gt;</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3 Visit~     1     0     0     1     0     0     0     0     1 &quot;\&quot;M~ Other &quot;\&quot;M~</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # ... with 4 more variables: Q5 &lt;dbl&gt;, Q6 &lt;lgl&gt;, Q7 &lt;chr&gt;, Q99 &lt;dbl&gt;</span></span></code></pre></div>
-<p>And view the structure of the file. Note that some columns have additional attributes with <code>variable.labels</code> and <code>lable.table</code>, e.g. Q99:</p>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 Visit…     1     0     1     0     0     0     0     0     1 &quot;Amu… Sher… &quot;Oth…</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2 Visit…     0     1     0     0     0     0     0     0     0 &quot;   … Nott…  &lt;NA&gt;</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3 Visit…     1     0     0     1     0     0     0     0     1 &quot;\&quot;M… Other &quot;\&quot;M…</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # … with 4 more variables: Q5 &lt;dbl&gt;, Q6 &lt;lgl&gt;, Q7 &lt;chr&gt;, Q99 &lt;dbl&gt;</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # ℹ Use `colnames()` to see all variable names</span></span></code></pre></div>
+<p>And view the structure of the file. Note that some columns have
+additional attributes with <code>variable.labels</code> and
+<code>lable.table</code>, e.g. Q99:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(dat)</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; &#39;data.frame&#39;:    3 obs. of  17 variables:</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  $ Q1  : chr  &quot;Visited before within the year&quot; &quot;Visited before that&quot; &quot;Visited before within the year&quot;</span></span>

@@ -1,6 +1,6 @@
-2abc86faf700641c47a9f1671f52a0f9 *DESCRIPTION
+67557ca59a626b9a2336af1aabefdc1b *DESCRIPTION
 b5ed75e8fbf3e440f8c1bb1d58052191 *NAMESPACE
-2d96e48809a68e2a8ecff097f181885b *NEWS
+d9037677b58268015d74bfca459c223a *NEWS.md
 31dbcc916670a4bf1e05d773d634b796 *R/fastdf.R
 45a2799ffb081afb5cb192332879fb4e *R/guess-asc-filename.R
 52512a17354149e2331ba0f1ecaa8dc6 *R/internal-csv.R
@@ -9,11 +9,11 @@ d501896965413d4b4bad6efeeaf9b5ca *R/read-fwf.R
 3122c000415b807b11842af4683e6b7f *R/read-sss-metadata.R
 b2a27c8a16c957d359b4f86f6b93a0f7 *R/read-sss.R
 20607da78262cd5d687a2318a3b27c6e *R/sss-package.R
-d38b3ce80997c87c32534bc6752fef04 *build/vignette.rds
+9b5aaa92a28be083f5346ea0d7818836 *build/vignette.rds
 69d08d80feff97cc42259fae144cd303 *inst/WORDLIST
 86ed5e58c0982b15ddfcf8a6735a648b *inst/doc/sss.R
 104b0e387da44862e8b0e2c949708151 *inst/doc/sss.Rmd
-7e82f1d747f443d284c5f5c0a11361f2 *inst/doc/sss.html
+ba9989916463aa6260c4c59a63aaf3ed *inst/doc/sss.html
 fdec8448b92af8fba7135bb972ea9ba7 *inst/examples/example-read-sss-metadata.R
 277ca260baefd88eae6bbafe843638bc *inst/examples/example-read-sss.R
 261451eec015bc5d0bfd68cca66105ca *inst/sampledata/sample-1.asc
@@ -40,7 +40,7 @@ f3fb43a80f9e6db0d0e4d8c1970db271 *man/parseSSSmetadata.Rd
 ae6dfa55a3ac71338aba4ced6b56634d *man/repN.Rd
 da290c6cd6269f7b62832dbb545ba0ea *man/splitMultiple.Rd
 16d8ac3942de4e76d128e576c030a9af *man/splitSSS.Rd
-99b80d5a4a6b63a54f4a475dc0150ba8 *man/sss-package.Rd
+938e3a61d302f835de7f5f8d38842ba2 *man/sss-package.Rd
 332173f20d20942c02019350ea4dcadc *tests/spelling.R
 81e513e389ff6c618a5b118cab3d1ac2 *tests/testthat.R
 f29b4eb14c528ca0d886abded1882b49 *tests/testthat/test-1-metadata.R
